@@ -36,10 +36,10 @@ EOT
     name                       = string
     order                      = number
     condition_json             = optional(string)
-    enabled                    = optional(bool, true)
+    enabled                    = optional(bool) # Default: true
     expiration                 = optional(string)
-    triggers_on                = optional(string, "Incidents")
-    triggers_when              = optional(string, "Created")
+    triggers_on                = optional(string) # Default: "Incidents"
+    triggers_when              = optional(string) # Default: "Created"
     action_incident = optional(object({
       classification         = optional(string)
       classification_comment = optional(string)
