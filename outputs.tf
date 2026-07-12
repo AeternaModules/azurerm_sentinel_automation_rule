@@ -1,3 +1,7 @@
+output "sentinel_automation_rules_id" {
+  description = "Map of id values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.id }
+}
 output "sentinel_automation_rules_action_incident" {
   description = "Map of action_incident values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
   value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.action_incident }
