@@ -1,53 +1,49 @@
-output "sentinel_automation_rules" {
-  description = "All sentinel_automation_rule resources"
-  value       = azurerm_sentinel_automation_rule.sentinel_automation_rules
-}
 output "sentinel_automation_rules_action_incident" {
-  description = "List of action_incident values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.action_incident]
+  description = "Map of action_incident values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.action_incident }
 }
 output "sentinel_automation_rules_action_incident_task" {
-  description = "List of action_incident_task values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.action_incident_task]
+  description = "Map of action_incident_task values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.action_incident_task }
 }
 output "sentinel_automation_rules_action_playbook" {
-  description = "List of action_playbook values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.action_playbook]
+  description = "Map of action_playbook values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.action_playbook }
 }
 output "sentinel_automation_rules_condition_json" {
-  description = "List of condition_json values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.condition_json]
+  description = "Map of condition_json values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.condition_json }
 }
 output "sentinel_automation_rules_display_name" {
-  description = "List of display_name values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.display_name]
+  description = "Map of display_name values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.display_name }
 }
 output "sentinel_automation_rules_enabled" {
-  description = "List of enabled values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.enabled]
+  description = "Map of enabled values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.enabled }
 }
 output "sentinel_automation_rules_expiration" {
-  description = "List of expiration values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.expiration]
+  description = "Map of expiration values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.expiration }
 }
 output "sentinel_automation_rules_log_analytics_workspace_id" {
-  description = "List of log_analytics_workspace_id values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.log_analytics_workspace_id]
+  description = "Map of log_analytics_workspace_id values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.log_analytics_workspace_id }
 }
 output "sentinel_automation_rules_name" {
-  description = "List of name values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.name]
+  description = "Map of name values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.name }
 }
 output "sentinel_automation_rules_order" {
-  description = "List of order values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.order]
+  description = "Map of order values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.order }
 }
 output "sentinel_automation_rules_triggers_on" {
-  description = "List of triggers_on values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.triggers_on]
+  description = "Map of triggers_on values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.triggers_on }
 }
 output "sentinel_automation_rules_triggers_when" {
-  description = "List of triggers_when values across all sentinel_automation_rules"
-  value       = [for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : v.triggers_when]
+  description = "Map of triggers_when values across all sentinel_automation_rules, keyed the same as var.sentinel_automation_rules"
+  value       = { for k, v in azurerm_sentinel_automation_rule.sentinel_automation_rules : k => v.triggers_when }
 }
 
