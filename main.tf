@@ -12,7 +12,7 @@ resource "azurerm_sentinel_automation_rule" "sentinel_automation_rules" {
   triggers_when              = each.value.triggers_when
 
   dynamic "action_incident" {
-    for_each = each.value.action_incident != null ? [each.value.action_incident] : []
+    for_each = each.value.action_incident != null ? each.value.action_incident : []
     content {
       classification         = action_incident.value.classification
       classification_comment = action_incident.value.classification_comment
@@ -25,7 +25,7 @@ resource "azurerm_sentinel_automation_rule" "sentinel_automation_rules" {
   }
 
   dynamic "action_incident_task" {
-    for_each = each.value.action_incident_task != null ? [each.value.action_incident_task] : []
+    for_each = each.value.action_incident_task != null ? each.value.action_incident_task : []
     content {
       description = action_incident_task.value.description
       order       = action_incident_task.value.order
@@ -34,7 +34,7 @@ resource "azurerm_sentinel_automation_rule" "sentinel_automation_rules" {
   }
 
   dynamic "action_playbook" {
-    for_each = each.value.action_playbook != null ? [each.value.action_playbook] : []
+    for_each = each.value.action_playbook != null ? each.value.action_playbook : []
     content {
       logic_app_id = action_playbook.value.logic_app_id
       order        = action_playbook.value.order
